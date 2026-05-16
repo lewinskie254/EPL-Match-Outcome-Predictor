@@ -1,6 +1,6 @@
 # How To Use the Application 
 
-1. Clone the repo `git clone https://github.com/lewinskie254/EPL-Predictions-2026.git` or the ssh equivalent.
+1. Clone the repo `git clone https://github.com/lewinskie254/EPL-Match-Outcome-Predictor.git` or the ssh equivalent.
 2. Create a virtual Environment `python -m venv .venv`.
 3. Install all Packages `pip install requirements.txt`. 
 4. Activate the virtual environment `.venv\Scripts\activate`.
