@@ -60,17 +60,15 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("-h", "--home", type=str, required=True)
-    parser.add_argument("-a", "--away", type=str, required=True)
-    parser.add_argument("-d", "--date", type=str, required=True)
+    parser.add_argument("-home", type=str, required=True)
+    parser.add_argument("-away", type=str, required=True)
+    parser.add_argument("-date", type=str, required=True)
 
     args = parser.parse_args()
 
-    home = args.home
-    away = args.away
-    date = datetime.strptime(args.date, "%Y-%m-%d")
-
-    print(home, away, date)
+    home_team = args.home
+    away_team = args.away
+    date_str = datetime.strptime(args.date, "%Y-%m-%d")
 
     df = pd.read_csv("epl.csv")
     df["MatchDate"] = pd.to_datetime(df["MatchDate"])
@@ -79,12 +77,12 @@ if __name__ == "__main__":
 
     teams = list(elo.keys())
 
-    home = get_close_matches('West Ham', teams)[0]
-    away = get_close_matches("Arsenal", teams)[0]
+    home = get_close_matches(home_team, teams)[0]
+    away = get_close_matches(away_team, teams)[0]
 
     print("-" * 50)
     print()
-    print(f"{home} Vs. {away}")
+    print(f"{home} Vs. {away}: ")
     print()
     print("-" * 50)
 
