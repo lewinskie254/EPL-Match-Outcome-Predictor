@@ -1,9 +1,9 @@
 # How To Use the Application 
 
 1. Clone the repo `git clone https://github.com/lewinskie254/EPL-Match-Outcome-Predictor.git` or the ssh equivalent.
-2. Install all Packages `pip install requirements.txt`. 
-3. Create a virtual Environment `python -m venv .venv`.
+2. Create a virtual Environment `python -m venv .venv`.
 4. Activate the virtual environment `.venv\Scripts\activate`.
+3. Install all Packages `pip install requirements.txt`. 
 5. You can now use the model using this simple process. `python main.py -home "Home Team" -away "Away Team" -date "date in year-month-day"`.
 6. E.g. `python main.py -home "Bunley" -away "Aston Villa" -date "2026-05-10"`.
 
