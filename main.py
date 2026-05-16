@@ -7,6 +7,7 @@ import pandas as pd
 from datetime import datetime
 import numpy as np 
 from difflib import get_close_matches
+import argparse
 
 
 load_dotenv()
@@ -56,6 +57,21 @@ def match_team(name, elo_keys):
 
 
 if __name__ == "__main__": 
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("-h", "--home", type=str, required=True)
+    parser.add_argument("-a", "--away", type=str, required=True)
+    parser.add_argument("-d", "--date", type=str, required=True)
+
+    args = parser.parse_args()
+
+    home = args.home
+    away = args.away
+    date = datetime.strptime(args.date, "%Y-%m-%d")
+
+    print(home, away, date)
+
     df = pd.read_csv("epl.csv")
     df["MatchDate"] = pd.to_datetime(df["MatchDate"])
 
