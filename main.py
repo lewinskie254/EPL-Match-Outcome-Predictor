@@ -1,18 +1,13 @@
 import json 
 import xgboost as xgb 
-import os 
-from dotenv import load_dotenv
 import pandas as pd 
 from datetime import datetime
 import numpy as np 
 from difflib import get_close_matches
 import argparse
 
-
-load_dotenv()
 model =  xgb.XGBClassifier() 
 model.load_model('xgb_model.json')
-API_KEY = os.getenv("API_KEY")
 
 with open('elo.json', 'r') as f:
     elo = json.load(f)
