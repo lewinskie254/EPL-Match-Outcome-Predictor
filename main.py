@@ -1,7 +1,6 @@
 import json 
 import xgboost as xgb 
 import os 
-import requests 
 from dotenv import load_dotenv
 import pandas as pd 
 from datetime import datetime
